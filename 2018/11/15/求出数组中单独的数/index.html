@@ -79,13 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="题目：在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识： 整数编码：计算机底层存储数据时均采用01编码方式实现，下面分别从非负">
+<meta property="og:type" content="article">
+<meta property="og:title" content="求出数组中单独的数">
+<meta property="og:url" content="http://yoursite.com/2018/11/15/求出数组中单独的数/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目：在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识： 整数编码：计算机底层存储数据时均采用01编码方式实现，下面分别从非负">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/yihuo.png">
+<meta property="og:updated_time" content="2018-11-15T10:24:03.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="求出数组中单独的数">
+<meta name="twitter:description" content="题目：在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识： 整数编码：计算机底层存储数据时均采用01编码方式实现，下面分别从非负">
+<meta name="twitter:image" content="http://yoursite.com/images/yihuo.png">
 
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/15/求出数组中单独的数/">
 
 
 
 
 
-  <title>Hexo</title>
+  <title>求出数组中单独的数 | Hexo</title>
   
 
 
@@ -140,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +219,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/求出数组中单独的数/" itemprop="url">求出数组中单独的数</a></h1>
+          <h1 class="post-title" itemprop="name headline">求出数组中单独的数</h1>
         
 
         <div class="post-meta">
@@ -298,9 +301,7 @@
       
 
       
-        
-          
-            <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。<br>如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9<br>最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识：</p>
+        <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。<br>如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9<br>最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识：</p>
 <h2 id="整数编码："><a href="#整数编码：" class="headerlink" title="整数编码："></a>整数编码：</h2><p>计算机底层存储数据时均采用01编码方式实现，下面分别从非负整数和正整数两个方面介绍：</p>
 <h3 id="正整数："><a href="#正整数：" class="headerlink" title="正整数："></a>正整数：</h3><p>在vc中int型数据占用4个字节32位，也就是说整数由32个0或者1组成，最高位为符号位，0代表正整数，1代表负整数。<br>所以对于正整数，其存在形式就是其二进制数：如：59表现为00000000 00000000 00000000 00111011，因为59 = 32 + 16 + 8 + 2 + 1</p>
 <h3 id="负整数："><a href="#负整数：" class="headerlink" title="负整数："></a>负整数：</h3><p>对于负整数，-59是不是表现为10000000 00000000 00000000 00111011呢？显然不是，理由之一在于两者相加不等于0。<br>对于负整数，首先应该求出其对应正整数的二进制编码，然后求出二进制编码的反码，最后求反码的补码，说这么多，举个例子。<br>对于-59：<br>编码：00000000 00000000 00000000 00111011<br>反码就是0变成1，1变成0<br>反码：11111111 11111111 11111111 11000100<br>补码就是在反码的基础上加1：<br>补码：11111111 11111111 11111111 11000101<br>最后补码就是-59的编码方式。</p>
@@ -425,8 +426,6 @@
 </table>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>上文引入了这么</p>
 
-          
-        
       
     </div>
     
@@ -443,12 +442,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -458,10 +457,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -469,6 +469,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -489,8 +493,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -532,6 +545,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目："><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数编码："><span class="nav-number">2.</span> <span class="nav-text">整数编码：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正整数："><span class="nav-number">2.1.</span> <span class="nav-text">正整数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负整数："><span class="nav-number">2.2.</span> <span class="nav-text">负整数：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑电路："><span class="nav-number">3.</span> <span class="nav-text">逻辑电路：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种最基本的逻辑电路："><span class="nav-number">3.1.</span> <span class="nav-text">三种最基本的逻辑电路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“异或”门"><span class="nav-number">3.2.</span> <span class="nav-text">“异或”门</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位操作符"><span class="nav-number">4.</span> <span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">5.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -672,6 +701,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

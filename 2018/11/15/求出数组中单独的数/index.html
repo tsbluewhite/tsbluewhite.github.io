@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="简体中文">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,11 +83,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="求出数组中单独的数">
 <meta property="og:url" content="http://yoursite.com/2018/11/15/求出数组中单独的数/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="无法访问此网站">
 <meta property="og:description" content="题目：在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识： 整数编码：计算机底层存储数据时均采用01编码方式实现，下面分别从非负">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="简体中文">
 <meta property="og:image" content="http://yoursite.com/images/yihuo.png">
-<meta property="og:updated_time" content="2018-11-15T10:24:03.868Z">
+<meta property="og:updated_time" content="2018-11-16T03:38:51.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求出数组中单独的数">
 <meta name="twitter:description" content="题目：在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识： 整数编码：计算机底层存储数据时均采用01编码方式实现，下面分别从非负">
@@ -127,7 +127,7 @@
 
 
 
-  <title>求出数组中单独的数 | Hexo</title>
+  <title>求出数组中单独的数 | 无法访问此网站</title>
   
 
 
@@ -139,7 +139,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="简体中文">
 
   
   
@@ -157,7 +157,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">无法访问此网站</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -237,13 +237,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/求出数组中单独的数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="tsbluewhite">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="无法访问此网站">
     </span>
 
     
@@ -424,7 +424,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>上文引入了这么</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>上文引入了这么多知识，只是为了接下来的求解过程，由上文可以知道：</p>
+<ol>
+<li>任意两个相同整数之间求“异或”的结果为零。</li>
+<li>任意的整数和零之间求“异或”的结果为其本身。</li>
+<li>“异或”运算满足计算的交换律。</li>
+</ol>
+<p>所以python代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def find_the_one(a_array):</span><br><span class="line">    result = 0</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> a_array:</span><br><span class="line">        result = result ^ item</span><br><span class="line">    <span class="built_in">return</span> result</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -507,7 +514,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">tsbluewhite</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -579,7 +586,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">tsbluewhite</span>
 
   
 </div>

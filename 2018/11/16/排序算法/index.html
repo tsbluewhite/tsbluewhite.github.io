@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="无法访问此网站">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="排序算法：计算机排序算法整体分为内排和外排，外排主要取决于数据的I/O速度，而内排主要取决于算法的时间复杂度和空间复杂度。接下来我主要说明内排算法（默认是从大到小排序）：先定义一个交换函数（下面会用到）： 1234def swap(i, j, array):    temp = array[i]    array[i] = array[j]    array[j] = temp 冒泡排序外层循环改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序算法">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/排序算法/index.html">
 <meta property="og:site_name" content="无法访问此网站">
+<meta property="og:description" content="排序算法：计算机排序算法整体分为内排和外排，外排主要取决于数据的I/O速度，而内排主要取决于算法的时间复杂度和空间复杂度。接下来我主要说明内排算法（默认是从大到小排序）：先定义一个交换函数（下面会用到）： 1234def swap(i, j, array):    temp = array[i]    array[i] = array[j]    array[j] = temp 冒泡排序外层循环改">
 <meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-11-16T10:13:20.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无法访问此网站">
+<meta name="twitter:title" content="排序算法">
+<meta name="twitter:description" content="排序算法：计算机排序算法整体分为内排和外排，外排主要取决于数据的I/O速度，而内排主要取决于算法的时间复杂度和空间复杂度。接下来我主要说明内排算法（默认是从大到小排序）：先定义一个交换函数（下面会用到）： 1234def swap(i, j, array):    temp = array[i]    array[i] = array[j]    array[j] = temp 冒泡排序外层循环改">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/排序算法/">
 
 
 
 
 
-  <title>无法访问此网站</title>
+  <title>排序算法 | 无法访问此网站</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/16/排序算法/" itemprop="url">排序算法</a></h1>
+          <h1 class="post-title" itemprop="name headline">排序算法</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <h2 id="排序算法："><a href="#排序算法：" class="headerlink" title="排序算法："></a>排序算法：</h2><p>计算机排序算法整体分为内排和外排，外排主要取决于数据的I/O速度，而内排主要取决于算法的时间复杂度和空间复杂度。接下来我主要说明内排算法（默认是从大到小排序）：<br>先定义一个交换函数（下面会用到）：</p>
+        <h2 id="排序算法："><a href="#排序算法：" class="headerlink" title="排序算法："></a>排序算法：</h2><p>计算机排序算法整体分为内排和外排，外排主要取决于数据的I/O速度，而内排主要取决于算法的时间复杂度和空间复杂度。接下来我主要说明内排算法（默认是从大到小排序）：<br>先定义一个交换函数（下面会用到）：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def swap(i, j, array):</span><br><span class="line">    temp = array[i]</span><br><span class="line">    array[i] = array[j]</span><br><span class="line">    array[j] = temp</span><br></pre></td></tr></table></figure>
 <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>外层循环改变当前的起始位置，内层循环每次找到比当前起始位置元素小时，进行交换操作。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def maopao_sort(array):</span><br><span class="line">    length = len(array)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length - 1):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+1, length):</span><br><span class="line">            <span class="keyword">if</span> array[i] &gt; array[j]:</span><br><span class="line">                swap(i, j, array)</span><br></pre></td></tr></table></figure>
@@ -317,8 +316,6 @@
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>思想很简单，找一个支点，使得左边元素全部比支点小，右边元素全部比支点大，然后递归分别求解左右两边。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">def digui_kuaisu_sort(begin, end, array):</span><br><span class="line">    <span class="keyword">if</span> begin &lt; end:</span><br><span class="line">        i = begin</span><br><span class="line">        j = end</span><br><span class="line">        <span class="comment">#  支点数据，一般取第一个位置的数据，可以优化</span></span><br><span class="line">        <span class="comment">#  最后，左边元素全部小于支点，右边元素全部大于支点</span></span><br><span class="line">        pivot = array[i]</span><br><span class="line">        <span class="keyword">while</span> i &lt; j:</span><br><span class="line">            <span class="comment">#  从后往前找到第一个小于支点的元素</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; j and array[j] &gt; pivot:</span><br><span class="line">                j = j - 1</span><br><span class="line">            <span class="comment">#  将找到的小于支点的元素扔到支点左边</span></span><br><span class="line">            <span class="keyword">if</span> i &lt; j:</span><br><span class="line">                array[i] = array[j]</span><br><span class="line">                i = i + 1</span><br><span class="line">            <span class="comment">#  从前往后找第一个大于支点的元素</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; j and array[i] &lt; pivot:</span><br><span class="line">                i = i + 1</span><br><span class="line">            <span class="comment">#  将找到的大于支点的元素扔到支点右边</span></span><br><span class="line">            <span class="keyword">if</span> i &lt; j:</span><br><span class="line">                array[j] = array[i]</span><br><span class="line">                j = j - 1</span><br><span class="line">        array[i] = pivot</span><br><span class="line">        <span class="comment">#  分别对于支点左边和右边再进行求解</span></span><br><span class="line">        digui_kuaisu_sort(begin, i-1, array)</span><br><span class="line">        digui_kuaisu_sort(i+1, end, array)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def kuaisu_sort(array):</span><br><span class="line">    length = len(array)</span><br><span class="line">    digui_kuaisu_sort(0, length-1, array)</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -335,262 +332,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/求出数组中单独的数/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tsbluewhite">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="无法访问此网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/求出数组中单独的数/" itemprop="url">求出数组中单独的数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T13:43:07+08:00">
-                2018-11-15
-              </time>
+              <a href="/2018/11/15/求出数组中单独的数/" rel="next" title="求出数组中单独的数">
+                <i class="fa fa-chevron-left"></i> 求出数组中单独的数
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在一个整型数组中，除了一个数以外，其余数均成对存在，找出那个单独的数。<br>如：input = [ 1, 5, 9, 4, 1, 4, 5]  output = 9<br>最简单的思路就是找到一个数，然后判断有没有另外一个数与之相等。这种思路的代码也很简单，这里我就不再细讲，主要讲另外一种思路。在讲另外一种思路之前，先讲三个重要的常识：</p>
-<h2 id="整数编码："><a href="#整数编码：" class="headerlink" title="整数编码："></a>整数编码：</h2><p>计算机底层存储数据时均采用01编码方式实现，下面分别从非负整数和正整数两个方面介绍：</p>
-<h3 id="正整数："><a href="#正整数：" class="headerlink" title="正整数："></a>正整数：</h3><p>在vc中int型数据占用4个字节32位，也就是说整数由32个0或者1组成，最高位为符号位，0代表正整数，1代表负整数。<br>所以对于正整数，其存在形式就是其二进制数：如：59表现为00000000 00000000 00000000 00111011，因为59 = 32 + 16 + 8 + 2 + 1</p>
-<h3 id="负整数："><a href="#负整数：" class="headerlink" title="负整数："></a>负整数：</h3><p>对于负整数，-59是不是表现为10000000 00000000 00000000 00111011呢？显然不是，理由之一在于两者相加不等于0。<br>对于负整数，首先应该求出其对应正整数的二进制编码，然后求出二进制编码的反码，最后求反码的补码，说这么多，举个例子。<br>对于-59：<br>编码：00000000 00000000 00000000 00111011<br>反码就是0变成1，1变成0<br>反码：11111111 11111111 11111111 11000100<br>补码就是在反码的基础上加1：<br>补码：11111111 11111111 11111111 11000101<br>最后补码就是-59的编码方式。</p>
-<h2 id="逻辑电路："><a href="#逻辑电路：" class="headerlink" title="逻辑电路："></a>逻辑电路：</h2><h3 id="三种最基本的逻辑电路："><a href="#三种最基本的逻辑电路：" class="headerlink" title="三种最基本的逻辑电路："></a>三种最基本的逻辑电路：</h3><p>实际上，电脑所有事件的处理都是靠这三种逻辑电路实现的，这里我们不纠结硬件上的问题，只关注逻辑，我们使用0或者1来代表硬件上的电压。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">input1</th>
-<th style="text-align:center">input2</th>
-<th style="text-align:center">“与”门</th>
-<th style="text-align:center">“或”门</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">input</th>
-<th style="text-align:center">“非”门</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<h3 id="“异或”门"><a href="#“异或”门" class="headerlink" title="“异或”门"></a>“异或”门</h3><p>“异或”门是由上面三种基本的逻辑电路组成的，具体构成情况如图：<br><img src="/images/yihuo.png" alt="yihuomen"></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">input1</th>
-<th style="text-align:center">input2</th>
-<th style="text-align:center">“异或”门</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><p>在高级程序语言中，对应逻辑电路运算的操作符为：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">逻辑电路</th>
-<th style="text-align:center">位操作符</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">“与”门</td>
-<td style="text-align:center">&amp;</td>
-<td style="text-align:left">参与运算的两个值，对应位取“与”运算</td>
-</tr>
-<tr>
-<td style="text-align:center">“或”门</td>
-<td style="text-align:center">&#124;</td>
-<td style="text-align:left">参与运算的两个值，对应位取“或”运算</td>
-</tr>
-<tr>
-<td style="text-align:center">“非”门</td>
-<td style="text-align:center">~</td>
-<td style="text-align:left">按位取“非”运算</td>
-</tr>
-<tr>
-<td style="text-align:center">“异或”门</td>
-<td style="text-align:center">^</td>
-<td style="text-align:left">参与运算的两个值，对应位取“异或”运算</td>
-</tr>
-</tbody>
-</table>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>上文引入了这么多知识，只是为了接下来的求解过程，由上文可以知道：</p>
-<ol>
-<li>任意两个相同整数之间求“异或”的结果为零。</li>
-<li>任意的整数和零之间求“异或”的结果为其本身。</li>
-<li>“异或”运算满足计算的交换律。</li>
-</ol>
-<p>所以python代码如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def find_the_one(a_array):</span><br><span class="line">    result = 0</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> a_array:</span><br><span class="line">        result = result ^ item</span><br><span class="line">    <span class="built_in">return</span> result</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -600,10 +363,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -611,6 +375,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -631,8 +399,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -674,6 +451,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法："><span class="nav-number">1.</span> <span class="nav-text">排序算法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">3.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序"><span class="nav-number">4.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序"><span class="nav-number">4.1.</span> <span class="nav-text">直接插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分插入排序"><span class="nav-number">4.2.</span> <span class="nav-text">二分插入排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#希尔排序"><span class="nav-number">4.3.</span> <span class="nav-text">希尔排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序"><span class="nav-number">5.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">6.</span> <span class="nav-text">快速排序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +607,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

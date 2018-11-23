@@ -229,6 +229,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/java实现算法的可视化（一）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tsbluewhite">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="无法访问此网站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/java实现算法的可视化（一）/" itemprop="url">java实现算法的可视化（一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-23T16:43:58+08:00">
+                2018-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这几次内容主要写的是看了大佬写的“看得见的算法”后的学习笔记。<br>其主要讲了七个算法的可视化，分别为：排序算法、概率模拟、走迷宫算法、随机迷宫生成、扫雷游戏、move the box游戏、分形图的绘制，而我也将从这七个部分进行阐述。</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>因为其主要利用的是java语言实现的，所以需要安装jdk，具体过程我这里就不在说明，这里我只说明下我所用的jdk版本和开发工具：<br>jdk：jdk-11.0.1<br>集成开发工具：IntelliJ IDEA</p>
+<h2 id="GUI编程"><a href="#GUI编程" class="headerlink" title="GUI编程"></a>GUI编程</h2><p>视频中使用的是java.swing这个框架实现的GUI编程的，其中只是简要讲了以下几点知识，并没有进行深入的讲解，对于以上几个算法来说已经足够了。</p>
+<h3 id="JFrame"><a href="#JFrame" class="headerlink" title="JFrame"></a>JFrame</h3><p>编程人员利用JFrame可以很简单创建一个窗口：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">    //新建一个窗口，标题为“WELCOME”</span><br><span class="line">    JFrame jFrame = new JFrame(<span class="string">"WELCOME"</span>);</span><br><span class="line">    //设置长宽为500,500</span><br><span class="line">    jFrame.setSize(500,500);</span><br><span class="line">    //设置其大小不可变</span><br><span class="line">    jFrame.setResizable(<span class="literal">false</span>);</span><br><span class="line">    //设置点击×号为关闭窗口</span><br><span class="line">    Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">    //设置窗口可见</span><br><span class="line">    jFrame.setVisible(<span class="literal">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Jpanel"><a href="#Jpanel" class="headerlink" title="Jpanel"></a>Jpanel</h3><p>jFrame窗口由MenuBar和container组成，JFrame本身不带有画图功能，我们需要将Jpanel对象放进container里面，才能利用jpanel进行画图操作。<br>那么我们怎样将jpanel对象放进container中呢？很简单，只需要在创建frame窗口时输入以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//新建一个JPanel对象</span><br><span class="line">JPanel canvas = new JPanel();</span><br><span class="line">//将对象放进去</span><br><span class="line">setContentPane(canvas);</span><br><span class="line">pack();</span><br></pre></td></tr></table></figure>
+<p>那么，我们怎样利用JPanel画图呢？只需要调用JPanel内置函数paintComponent()，具体代码如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void paintComponent(Graphics g)&#123;</span><br><span class="line">    //将Graphics强制转换为Graphics2D对象</span><br><span class="line">    Graphics2D g2d = (Graphics2D)g;</span><br><span class="line">    //Ellipsed2D为圆的类，矩形为Rectangle2D，等等</span><br><span class="line">    //创建一个圆的对象</span><br><span class="line">    Ellipse2D circle = new Ellipse2D.Double(0,0,0,0);</span><br><span class="line">    //画一个圆（空心圆）</span><br><span class="line">    g2d.draw(circle);</span><br><span class="line">    //画一个圆（实心圆）</span><br><span class="line">    g2d.fill(circle);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>何为动画，其实动画很简单，所谓的动画只是几张静态图片的组成，我们先画好一张图片，然后清除画布，再画一张图片，当时间间隔比较短时，就变成了动画。<br>对于程序而言按照这个思路也很简单，先画一张图片，然后调用repaint()即可。</p>
+<h3 id="键盘和鼠标事件"><a href="#键盘和鼠标事件" class="headerlink" title="键盘和鼠标事件"></a>键盘和鼠标事件</h3><p>对于键盘和鼠标事件java有专门的监听类分别为KeyListener和MouseListener，只需要重写内置函数即可。举个例子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//新创建一个内部类，用于处理鼠标事件</span><br><span class="line">private class AlgoKeyListener extends KeyAdapter &#123;</span><br><span class="line">    //当按下某一个键盘时</span><br><span class="line">    public void keyReleased(KeyEvent e)</span><br><span class="line">    &#123;</span><br><span class="line">        //如果按下的键盘为空格</span><br><span class="line">        <span class="keyword">if</span>(e.getKeyChar() == <span class="string">' '</span>)</span><br><span class="line">            System.out.println(<span class="string">"按下了空格"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>至于这里为什么是KeyAdapter而不是KeyListener，因为如果是继承接口的话我们需要实现接口中的所有函数，KeyListener中有keyTyped(),keyReleased(),keyPressed()三个函数，但是这里我们只需要利用keyReleased(),所以java设计人员为我们想到了KeyAdapter这个类，这个类实现了KeyListen三个函数，但是为空实现，就是为了避免这种事情的发生。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/排序算法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -647,7 +779,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
